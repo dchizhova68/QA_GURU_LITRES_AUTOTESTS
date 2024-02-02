@@ -87,7 +87,7 @@ gradle clean smoke_test запуск smoke сьюта
 Реализована интеграция с <code>Allure TestOps</code>. Есть возможность просмотре результата выполнения автотестов и создания ручных тестов. 
 
 <p align="center">
-<img title="Allure TestOps DashBoard" src="media/screenshots/AllureTestOps.JPG">
+<img title="Allure TestOps DashBoard" src="src/media/screenshots/AllureTestOps.JPG">
 </p>
 
 
@@ -97,7 +97,7 @@ gradle clean smoke_test запуск smoke сьюта
 Реализована интеграция <code>Allure TestOps</code> с <code>Jira</code>, в задаче отображаются связные автотесты и результат их выполнения.
 
 <p align="center">
-<img title="Jira Task" src="media/screenshots/JiraTask.JPG">
+<img title="Jira Task" src="src/media/screenshots/JiraTask.JPG">
 </p>
 
 
@@ -107,7 +107,7 @@ gradle clean smoke_test запуск smoke сьюта
 Результаты выполнения автотестов отправляются в Telegram.
 
 <p align="center">
-<img width="70%" title="Telegram Notifications" src="media/screenshots/TelegramBot.JPG">
+<img width="70%" title="Telegram Notifications" src="src/media/screenshots/TelegramBot.JPG">
 </p>
 
 
