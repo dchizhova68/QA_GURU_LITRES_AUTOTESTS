@@ -52,7 +52,7 @@
 gradle clean full_test  запуск всех тестов
 gradle clean smoke_test запуск smoke сьюта
 ```
-____
+
 <a id="jenkins"></a>
 ## <img alt="Jenkins" height="25" src="src/media/logo/Jenkins.svg" width="25"/></a><a name="Сборка"></a>Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/student-dchizhova68-qa_guru23_jenkins_litres_autotest/)</a>
 
@@ -66,11 +66,55 @@ ____
 - VIDEO_URL (адрес удаленного сервера, где храниться видео с записью автотеста)
 - TASK (набор тестов для запуска)
 - BASE_URL (адрес основной страницы тестируемого сайта)
-- 
+  
 <p align="center">
-<img title="parametrs" src="media/screen/parametrs.JPG">
+<img title="parametrs" src="src/media/screenshots/parametrs.JPG">
 </p>
 
+
+<a id="allure"></a>
+## <img width="4%" style="vertical-align:middle" title="Allure Report" src="src/media/logo/Allure.svg"> </a> Пример  Allure-отчета </a>  
 Дождаться выполнения сборки. нажать на кнопку "Allure Report"
 
-![jenkins](src/test/media/screenshots/AllureReport1.JPG "График Jenkins")
+![jenkins](src/media/screenshots/AllureReport1.png "Отчет")
+
+Пример Allure Report: 
+![jenkins](src/media/screenshots/AllureReport.png "Пример отчета")
+
+<a id="allure-testops"></a>
+## <img width="4%" style="vertical-align:middle" title="Allure TestOps" src="src/media/logo/Allure_TO.svg"> </a> Интеграция с Allure TestOps </a> 
+
+Реализована интеграция с <code>Allure TestOps</code>. Есть возможность просмотре результата выполнения автотестов и создания ручных тестов. 
+
+<p align="center">
+<img title="Allure TestOps DashBoard" src="media/screenshots/AllureTestOps.JPG">
+</p>
+
+
+<a id="jira"></a>
+## <img width="4%" style="vertical-align:middle" title="Jira" src="src/media/logo/Jira.svg"> </a> Интеграция с Jira </a> 
+
+Реализована интеграция <code>Allure TestOps</code> с <code>Jira</code>, в задаче отображаются связные автотесты и результат их выполнения.
+
+<p align="center">
+<img title="Jira Task" src="media/screenshots/JiraTask.JPG">
+</p>
+
+
+<a id="telegram"></a>
+## <img width="4%" style="vertical-align:middle" title="Telegram" src="src/media/logo/Telegram.svg"> Уведомления в Telegram с использованием бота
+
+Результаты выполнения автотестов отправляются в Telegram.
+
+<p align="center">
+<img width="70%" title="Telegram Notifications" src="media/screenshots/TelegramBot.JPG">
+</p>
+
+
+<a id="video"></a>
+## <img width="4%" style="vertical-align:middle" title="Selenoid" src="src/media/logo/Selenoid.svg"> Видео примера запуска тестов в Selenoid
+
+В отчетах Allure для каждого теста прикреплено видео прохождения теста
+<p align="center">
+  <video width="100%" height="100%" controls="" autoplay=""><source src="https://selenoid.autotests.cloud/video/87a1ee6dac27e971e5141df0673cebc8.mp4" type="video/mp4"></video>
+</p>
