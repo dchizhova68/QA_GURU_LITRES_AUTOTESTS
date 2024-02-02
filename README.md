@@ -116,5 +116,5 @@ gradle clean smoke_test запуск smoke сьюта
 
 В отчетах Allure для каждого теста прикреплено видео прохождения теста
 <p align="center">
-  <video width="100%" height="100%" controls="" autoplay=""><source src="https://selenoid.autotests.cloud/video/87a1ee6dac27e971e5141df0673cebc8.mp4" type="video/mp4"></video>
+  <img title="Selenoid Video" src="src/media/screenshots/testVideo.gif">
 </p>
