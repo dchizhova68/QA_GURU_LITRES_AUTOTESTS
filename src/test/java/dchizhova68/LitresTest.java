@@ -30,7 +30,7 @@ public class LitresTest extends TestBase {
     @DisplayName("Проверка добавления книги в корзину")
     @Tag("BLOKER")
     @ParameterizedTest
-    void addBookToBaskettTest(String bookTitle) {
+    void addBookToBasketTest(String bookTitle) {
         litres.openPage()
                 .setSearchValue(bookTitle)
                 .openDetailFormBook()
@@ -41,21 +41,23 @@ public class LitresTest extends TestBase {
     }
 
     @ValueSource(strings = {
-            "Новинки"
+            "Новинки",
+            "Подборки"
     })
     @Tag("MINOR")
     @ParameterizedTest
     @DisplayName("Навигационная цепочка в разделе должна содержать название раздела")
-    void breadcrumbsTest(String pageName) {
+    void checkBreadcrumbsTest(String pageName) {
         litres.openPage()
                 .openPageByName(pageName)
                 .checkBreadCrumbs(pageName);
 
     }
+
     @DisplayName("Проверка поиска несуществующей книги")
     @Tag("MINOR")
     @Test
-    void nothingFoundTest() {
+    void CheckEmptySearchTest() {
         litres.openPage()
                 .setSearchValue("sjekja;s,dxbek")
                 .checkResultsIsEmpty();
