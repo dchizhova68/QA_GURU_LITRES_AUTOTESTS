@@ -40,18 +40,14 @@ public class LitresTest extends TestBase {
                 .checkBasketContainsAddedBook(bookTitle);
     }
 
-    @ValueSource(strings = {
-            "Новинки",
-            "Подборки"
-    })
+    @CsvFileSource(resources = "/test_data/checkBreadcrumbsTest.csv")
     @Tag("MINOR")
     @ParameterizedTest
     @DisplayName("Навигационная цепочка в разделе должна содержать название раздела")
-    void checkBreadcrumbsTest(String pageName) {
+    void checkBreadcrumbsTest(String pageName, String navLastChildName) {
         litres.openPage()
                 .openPageByName(pageName)
-                .checkBreadCrumbs(pageName);
-
+                .checkBreadCrumbs(navLastChildName);
     }
 
     @DisplayName("Проверка поиска несуществующей книги")

@@ -17,7 +17,7 @@ public class LitresPage {
             addToCartButton = $(byAttribute("data-testid", "book__addToCartButton--desktop")),
             closeModalButton = $(byAttribute("data-testid", "modal-book-label__wrapper")).$("use"),
             tabBasket = $(byAttribute("data-testid", "tab-basket")).$("a"),
-            breadcrumbsSelector = $("#breadcrumbs:last-child"),
+            breadcrumbsSelector = $("#breadcrumbs li:last-child"),
             searchTitleWrapper = $(byAttribute("data-testid", "search-title__wrapper")),
             promoBanner = $(byAttribute("data-testid", "mainPromoBanner--desktop")).parent();
 
@@ -76,13 +76,13 @@ public class LitresPage {
 
     @Step("Открываем раздел {pageName}")
     public LitresPage openPageByName(String pageName) {
-        $(byTagAndText("div", pageName)).click();
+        $(byTagAndText("a", pageName)).click();
         return this;
     }
 
     @Step("Проверяем навигационную цепочку")
-    public LitresPage checkBreadCrumbs(String pageName) {
-        breadcrumbsSelector.shouldHave(text(pageName));
+    public LitresPage checkBreadCrumbs(String navLastChildName) {
+        breadcrumbsSelector.shouldHave(text(navLastChildName));
         return this;
     }
 
