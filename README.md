@@ -35,11 +35,9 @@
 <a id="cases"></a>
 ## <a name="Примеры автоматизированных тест-кейсов">**Примеры автоматизированных тест-кейсов:**</a>
 
-- ✓ *Проверка поиска книги по автору*
-- ✓ *Проверка добавления книги в корзину*
-- ✓ *Проверка навигационной цепочки*
-- ✓ *Проверка поиска несуществующей книги*
-- ✓ *Проверка рекламного баннера*
+- ✓ *Проверка поиска книг*
+- ✓ *Проверка добавления книг и удаление книг из корзины*
+- ✓ *Проверка элементов навигации по сайту*
 
 
 <a id="console"></a>
@@ -49,12 +47,15 @@
 
 Из корневой директории проекта выполнить:
 ```
-gradle clean full_test  запуск всех тестов
-gradle clean smoke_test запуск smoke сьюта
+gradle clean full_test -Denv=local  - запуск всех тестов локально
+gradle clean buy_test -Denv=local   - запуск тестов на покупку локально
+gradle clean search_test -Denv=local - запуск тестов на поиск локально
+gradle clean navigation_test -Denv=local - запуск тестов на навигацию локально
+
 ```
 
 <a id="jenkins"></a>
-## <img alt="Jenkins" height="25" src="src/media/logo/Jenkins.svg" width="25"/></a><a name="Сборка"></a>Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/student-dchizhova68-qa_guru23_jenkins_litres_autotest/)</a>
+## <img alt="Jenkins" height="25" src="src/media/logo/Jenkins.svg" width="25"/></a><a name="Сборка"></a>Удаленный запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/student-dchizhova68-qa_guru23_jenkins_litres_autotest/)</a>
 
 Для запуска сборки необходимо перейти в раздел <code>Build with parameters</code>, выбрать необходимые параметры и нажать кнопку <code>Build</code>.
 
@@ -73,7 +74,7 @@ gradle clean smoke_test запуск smoke сьюта
 
 
 <a id="allure"></a>
-## <img width="4%" style="vertical-align:middle" title="Allure Report" src="src/media/logo/Allure.svg"> </a> Пример  Allure-отчета </a>  
+## <img width="4%" style="vertical-align:middle" title="Allure Report" src="src/media/logo/Allure.svg"> </a> Пример  [Allure-отчета](https://jenkins.autotests.cloud/job/student-dchizhova68-qa_guru23_jenkins_litres_autotest/allure/#suites/41277a3158bf1a31c2a3a799da365f5e/5360cc7af9e7f66d/) </a>  
 Дождаться выполнения сборки. нажать на кнопку "Allure Report"
 
 ![jenkins](src/media/screenshots/AllureReport1.png "Отчет")
@@ -82,7 +83,7 @@ gradle clean smoke_test запуск smoke сьюта
 ![jenkins](src/media/screenshots/AllureReport.png "Пример отчета")
 
 <a id="allure-testops"></a>
-## <img width="4%" style="vertical-align:middle" title="Allure TestOps" src="src/media/logo/Allure_TO.svg"> </a> Интеграция с Allure TestOps </a> 
+## <img width="4%" style="vertical-align:middle" title="Allure TestOps" src="src/media/logo/Allure_TO.svg"> </a> Интеграция с [Allure TestOps](https://allure.autotests.cloud/project/4014/test-cases/30348?treeId=7852) </a> 
 
 Реализована интеграция с <code>Allure TestOps</code>. Есть возможность просмотре результата выполнения автотестов и создания ручных тестов. 
 
@@ -92,7 +93,7 @@ gradle clean smoke_test запуск smoke сьюта
 
 
 <a id="jira"></a>
-## <img width="4%" style="vertical-align:middle" title="Jira" src="src/media/logo/Jira.svg"> </a> Интеграция с Jira </a> 
+## <img width="4%" style="vertical-align:middle" title="Jira" src="src/media/logo/Jira.svg"> </a> Интеграция с [Jira](https://jira.autotests.cloud/browse/HOMEWORK-1095) </a> 
 
 Реализована интеграция <code>Allure TestOps</code> с <code>Jira</code>, в задаче отображаются связные автотесты и результат их выполнения.
 
