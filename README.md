@@ -115,7 +115,7 @@ gradle clean navigation_test -Denv=local - запуск тестов на нав
 <a id="video"></a>
 ## <img width="4%" style="vertical-align:middle" title="Selenoid" src="src/media/logo/Selenoid.svg"> Видео примера запуска тестов в Selenoid
 
-В отчетах Allure для каждого теста прикреплено видео прохождения теста
+В отчетах Allure для каждого теста прикреплено видео прохождения теста 
 <p align="center">
   <img title="Selenoid Video" src="src/media/screenshots/testVideo.gif">
 </p>
