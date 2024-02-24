@@ -80,7 +80,7 @@ gradle clean navigation_test -Denv=local - запуск тестов на нав
 ![jenkins](src/media/screenshots/AllureReport1.png "Отчет")
 
 Пример Allure Report: 
-![jenkins](src/media/screenshots/AllureReport.png "Пример отчета")
+![jenkins](src/media/screenshots/AllureReport.JPG "Пример отчета")
 
 <a id="allure-testops"></a>
 ## <img width="4%" style="vertical-align:middle" title="Allure TestOps" src="src/media/logo/Allure_TO.svg"> </a> Интеграция с [Allure TestOps](https://allure.autotests.cloud/project/4014/test-cases/30348?treeId=7852) </a> 
