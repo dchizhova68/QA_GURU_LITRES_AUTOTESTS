@@ -53,12 +53,27 @@ tasks.withType(Test) {
     }
 }
 
-task smoke_test(type: Test) {
-
-    useJUnitPlatform {
-        includeTags("BLOKER")
-    }
-}
 task full_test(type: Test) {
     useJUnitPlatform()
+}
+
+task buy_test(type: Test) {
+
+    useJUnitPlatform {
+        includeTags("BUY_TEST")
+    }
+}
+
+task search_test(type: Test) {
+
+    useJUnitPlatform {
+        includeTags("SEARCH_TEST")
+    }
+}
+
+task navigation_test(type: Test) {
+
+    useJUnitPlatform {
+        includeTags("NAVIGATION_TEST")
+    }
 }

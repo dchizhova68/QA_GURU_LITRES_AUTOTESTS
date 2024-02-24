@@ -1,4 +1,4 @@
-package config;
+package dchizhova68.config;
 
 import org.aeonbits.owner.Config;
 

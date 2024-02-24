@@ -1,9 +1,9 @@
-package dchizhova68;
+package dchizhova68.tests;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
-import config.WebDriverConfig;
+import dchizhova68.config.WebDriverConfig;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.aeonbits.owner.ConfigFactory;
@@ -23,7 +23,7 @@ public class TestBase {
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
         Configuration.browserVersion = config.getBrowserVersion();
         Configuration.pageLoadStrategy = "eager";
-        Configuration.timeout = 10000;
+        Configuration.timeout = 30000;
         Configuration.baseUrl = System.getProperty("baseUrl", "https://www.litres.ru");
 
         if (config.isRemote()) {
