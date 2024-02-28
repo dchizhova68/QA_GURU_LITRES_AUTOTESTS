@@ -53,9 +53,6 @@ tasks.withType(Test) {
     }
 }
 
-task full_test(type: Test) {
-    useJUnitPlatform()
-}
 
 task buy_test(type: Test) {
 
