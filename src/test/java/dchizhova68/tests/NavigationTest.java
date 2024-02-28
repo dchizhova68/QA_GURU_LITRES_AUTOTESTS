@@ -44,8 +44,8 @@ public class NavigationTest extends TestBase {
     @Owner("Darya Chizhova")
     @Severity(SeverityLevel.BLOCKER)
     void openCatalogTest() throws InterruptedException {
-        mainPage.openPage();
-        mainPage.openCatalog()
+        mainPage.openPage()
+                .openCatalog()
                 .checkGenresPopupVisible();
     }
 
@@ -54,8 +54,8 @@ public class NavigationTest extends TestBase {
     @Owner("Darya Chizhova")
     @Severity(SeverityLevel.CRITICAL)
     void openMoreItemsMenuTest() throws InterruptedException {
-        mainPage.openPage();
-        mainPage.openMoreItemsMenu()
+        mainPage.openPage()
+                .openMoreItemsMenu()
                 .checkMoreItemsMenuVisible();
     }
 }
