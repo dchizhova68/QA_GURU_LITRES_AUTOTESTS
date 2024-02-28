@@ -1,6 +1,7 @@
 package dchizhova68.tests;
 
-import dchizhova68.pages.PageObject;
+import dchizhova68.pages.MainPage;
+import dchizhova68.pages.NavigationPage;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
@@ -15,15 +16,17 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 @Tag("NAVIGATION_TEST")
 @Feature("Тестирования навигации по сайту")
 public class NavigationTest extends TestBase {
-    PageObject litres = new PageObject();
+    MainPage mainPage = new MainPage();
+    NavigationPage navigationPage = new NavigationPage();
+
 
     @ParameterizedTest(name = "Навигационная цепочка в разделе должна содержать название раздела")
     @Owner("Darya Chizhova")
     @Severity(SeverityLevel.MINOR)
     @CsvFileSource(resources = "/test_data/checkBreadcrumbsTest.csv")
     void checkBreadcrumbsTest(String pageName, String navLastChildName) {
-        litres.openPage()
-                .openPageByName(pageName)
+        mainPage.openPage();
+        navigationPage.openPageByName(pageName)
                 .checkBreadCrumbs(navLastChildName);
     }
 
@@ -32,7 +35,7 @@ public class NavigationTest extends TestBase {
     @Owner("Darya Chizhova")
     @Severity(SeverityLevel.NORMAL)
     void promoBannerVisibleTest() {
-        litres.openPage()
+        mainPage.openPage()
                 .checkPromoBanner();
     }
 
@@ -41,9 +44,8 @@ public class NavigationTest extends TestBase {
     @Owner("Darya Chizhova")
     @Severity(SeverityLevel.BLOCKER)
     void openCatalogTest() throws InterruptedException {
-        litres.openPage();
-        Thread.sleep(10000);
-        litres.openCatalog()
+        mainPage.openPage();
+        mainPage.openCatalog()
                 .checkGenresPopupVisible();
     }
 
@@ -52,9 +54,8 @@ public class NavigationTest extends TestBase {
     @Owner("Darya Chizhova")
     @Severity(SeverityLevel.CRITICAL)
     void openMoreItemsMenuTest() throws InterruptedException {
-        litres.openPage();
-        Thread.sleep(10000);
-        litres.openMoreItemsMenu()
+        mainPage.openPage();
+        mainPage.openMoreItemsMenu()
                 .checkMoreItemsMenuVisible();
     }
 }

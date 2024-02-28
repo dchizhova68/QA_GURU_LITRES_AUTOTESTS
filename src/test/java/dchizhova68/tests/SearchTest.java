@@ -1,6 +1,7 @@
 package dchizhova68.tests;
 
-import dchizhova68.pages.PageObject;
+import dchizhova68.pages.MainPage;
+import dchizhova68.pages.SearcResultPage;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
@@ -15,16 +16,17 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 @Feature("Тестирования поиска")
 @DisplayName("Тесты на поиск")
 public class SearchTest extends TestBase {
-    PageObject litres = new PageObject();
+    MainPage mainPage = new MainPage();
+    SearcResultPage searcResultPage = new SearcResultPage();
 
     @ParameterizedTest(name = "В результатах поиска по автору {0} должна быть книга {1}")
     @Owner("Darya Chizhova")
     @Severity(SeverityLevel.BLOCKER)
     @CsvFileSource(resources = "/test_data/findBookByAuthorTest.csv")
     void successfulSearchTest(String author, String bookName) {
-        litres.openPage()
-                .setSearchValue(author)
-                .checkSearchResultHavePopularBookByAuthor(bookName);
+        mainPage.openPage()
+                .setSearchValue(author);
+        searcResultPage.checkSearchResultHavePopularBookByAuthor(bookName);
     }
 
     @Test
@@ -32,9 +34,9 @@ public class SearchTest extends TestBase {
     @Owner("Darya Chizhova")
     @Severity(SeverityLevel.NORMAL)
     void unsuccessfulSearchTest() {
-        litres.openPage()
-                .setSearchValue("sjekja;s,dxbek")
-                .checkResultsIsEmpty();
+        mainPage.openPage()
+                .setSearchValue("sjekja;s,dxbek");
+        searcResultPage.checkResultsIsEmpty();
     }
 
 }

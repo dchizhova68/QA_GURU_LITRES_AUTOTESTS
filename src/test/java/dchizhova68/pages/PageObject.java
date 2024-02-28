@@ -2,14 +2,11 @@ package dchizhova68.pages;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import io.qameta.allure.Step;
 
-import static com.codeborne.selenide.CollectionCondition.itemWithText;
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byAttribute;
 import static com.codeborne.selenide.Selectors.byTagAndText;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$$;
 
 public class PageObject {
     private SelenideElement
@@ -36,113 +33,4 @@ public class PageObject {
             bookCardTitle = $$(byAttribute("data-testid", "cart__bookCardTitle--wrapper"));
 
 
-    @Step("Открываем главную страницу")
-    public PageObject openPage() {
-        open("/");
-        return this;
-    }
-
-    @Step("Вводим в поисковую строку {author}")
-    public PageObject setSearchValue(String author) {
-        searchInput.setValue(author).pressEnter();
-        return this;
-    }
-
-    @Step("Проверяем, что в результатах поиска есть книга {bookTitle}")
-    public PageObject checkSearchResultHavePopularBookByAuthor(String bookTitle) {
-        bookTitleTag.shouldHave(itemWithText(bookTitle));
-        return this;
-    }
-
-    @Step("Переходим в детальную форм просмотра первой книги из списка")
-    public PageObject openDetailFormBook() {
-        linkDetailFormBook.click();
-        return this;
-    }
-
-    @Step("Закрываем модальное окно")
-    public PageObject closeModalWindow() {
-        closeModalButton.click();
-        return this;
-    }
-
-    @Step("Добавляем книгу в корзину")
-    public PageObject addBookToBasket() {
-        addToCartButton.click();
-        return this;
-    }
-
-    @Step("Переходим в корзину")
-    public PageObject openBasket() {
-        tabBasket.click();
-        return this;
-    }
-
-    @Step("Удаляем книгу из корзины")
-    public PageObject deleteBook() {
-        deleteButton.click();
-        deleteModalButton.click();
-        return this;
-    }
-
-    @Step("Проверяем, что карзина пустая")
-    public PageObject checkCartEmptyState() {
-        cartEmptyState.shouldBe(visible);
-        return this;
-    }
-
-
-    @Step("Проверяем, что в корзине есть книга{bookTitle}")
-    public PageObject checkBasketContainsAddedBook(String bookTitle) {
-        bookCardTitle.shouldHave(itemWithText(bookTitle));
-        return this;
-    }
-
-    @Step("Открываем раздел {pageName}")
-    public PageObject openPageByName(String pageName) {
-        $(byTagAndText("a", pageName)).click();
-        return this;
-    }
-
-    @Step("Проверяем навигационную цепочку")
-    public PageObject checkBreadCrumbs(String navLastChildName) {
-        breadcrumbsSelector.shouldHave(text(navLastChildName));
-        return this;
-    }
-
-    @Step("Проверяем, что в результате поимка ничего не найдено")
-    public PageObject checkResultsIsEmpty() {
-        searchTitleWrapper.shouldHave(text("ничего не найдено"));
-        return this;
-    }
-
-    @Step("Проверяем видимость рекламного баннера")
-    public PageObject checkPromoBanner() {
-        promoBanner.shouldBe(visible);
-        return this;
-    }
-
-    @Step("Нажмаем на кнопку Каталог")
-    public PageObject openCatalog() {
-        catalogButton.click();
-        return this;
-    }
-
-    @Step("Проверяем видимость всплывающего окна с каталогом книг")
-    public PageObject checkGenresPopupVisible() {
-        genresPopup.shouldBe(visible);
-        return this;
-    }
-
-    @Step("Раскрываем дополнительные пункты меню")
-    public PageObject openMoreItemsMenu() {
-        menuMoreButton.click();
-        return this;
-    }
-
-    @Step("Проверяем видимость дополнительных пунктов меню")
-    public PageObject checkMoreItemsMenuVisible() {
-        menuMoreItems.shouldBe(visible);
-        return this;
-    }
 }

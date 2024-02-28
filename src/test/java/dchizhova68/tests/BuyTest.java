@@ -1,6 +1,8 @@
 package dchizhova68.tests;
 
-import dchizhova68.pages.PageObject;
+import dchizhova68.pages.BasketPage;
+import dchizhova68.pages.BookPage;
+import dchizhova68.pages.MainPage;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
@@ -15,7 +17,9 @@ import org.junit.jupiter.params.provider.ValueSource;
 @Feature("Тестирования покупки")
 @DisplayName("Тесты на добавление в корзину и покупку")
 public class BuyTest extends TestBase {
-    PageObject litres = new PageObject();
+    MainPage mainPage = new MainPage();
+    BasketPage basketPage = new BasketPage();
+    BookPage bookPage = new BookPage();
 
     @ParameterizedTest(name = "Проверка добавления книги в корзину")
     @Owner("Darya Chizhova")
@@ -25,13 +29,13 @@ public class BuyTest extends TestBase {
             "Отцы и дети"
     })
     void addBookToBasketTest(String bookTitle) {
-        litres.openPage()
+        mainPage.openPage()
                 .setSearchValue(bookTitle)
-                .openDetailFormBook()
-                .addBookToBasket()
+                .openDetailFormBook();
+        bookPage.addBookToBasket()
                 .closeModalWindow()
-                .openBasket()
-                .checkBasketContainsAddedBook(bookTitle);
+                .openBasket();
+        basketPage.checkBasketContainsAddedBook(bookTitle);
     }
 
     @ParameterizedTest(name = "Проверка удаления книги из корзины")
@@ -41,13 +45,13 @@ public class BuyTest extends TestBase {
     })
     @Severity(SeverityLevel.NORMAL)
     void deleteBookFromBasketTest(String bookTitle) {
-        litres.openPage()
+        mainPage.openPage()
                 .setSearchValue(bookTitle)
-                .openDetailFormBook()
-                .addBookToBasket()
+                .openDetailFormBook();
+        bookPage.addBookToBasket()
                 .closeModalWindow()
-                .openBasket()
-                .checkBasketContainsAddedBook(bookTitle)
+                .openBasket();
+        basketPage.checkBasketContainsAddedBook(bookTitle)
                 .deleteBook()
                 .checkCartEmptyState();
     }
