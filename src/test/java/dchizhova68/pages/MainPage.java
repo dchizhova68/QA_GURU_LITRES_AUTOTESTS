@@ -38,31 +38,31 @@ public class MainPage {
     }
 
 
-    @Step("Проверяем видимость рекламного баннера")
+    @Step("Проверить видимость рекламного баннера")
     public MainPage checkPromoBanner() {
         promoBanner.shouldBe(visible);
         return this;
     }
 
-    @Step("Нажмаем на кнопку Каталог")
+    @Step("Нажать на кнопку Каталог")
     public MainPage openCatalog() {
         catalogButton.click();
         return this;
     }
 
-    @Step("Проверяем видимость всплывающего окна с каталогом книг")
+    @Step("Проверить видимость всплывающего окна с каталогом книг")
     public MainPage checkGenresPopupVisible() {
         genresPopup.shouldBe(visible);
         return this;
     }
 
-    @Step("Раскрываем дополнительные пункты меню")
+    @Step("Нажать на кнопку 'Еще' в меню")
     public MainPage openMoreItemsMenu() {
         menuMoreButton.click();
         return this;
     }
 
-    @Step("Проверяем видимость дополнительных пунктов меню")
+    @Step("Проверить видимость дополнительных пунктов меню")
     public MainPage checkMoreItemsMenuVisible() {
         menuMoreItems.shouldBe(visible);
         return this;

@@ -21,7 +21,7 @@ public class NavigationTest extends TestBase {
     NavigationPage navigationPage = new NavigationPage();
 
 
-    @ParameterizedTest(name = "Навигационная цепочка в разделе должна содержать название раздела")
+    @ParameterizedTest(name = "Навигационная цепочка в разделе {pageName} должна содержать пункт {navLastChildName}")
     @Owner("Darya Chizhova")
     @Severity(SeverityLevel.MINOR)
     @CsvFileSource(resources = "/test_data/checkBreadcrumbsTest.csv")
@@ -42,7 +42,7 @@ public class NavigationTest extends TestBase {
     }
 
     @Test
-    @DisplayName("Проверка каталога")
+    @DisplayName("Проверка отображения каталога")
     @Owner("Darya Chizhova")
     @Severity(SeverityLevel.BLOCKER)
     void openCatalogTest() throws InterruptedException {

@@ -18,14 +18,14 @@ public class SearcResultPage {
     private ElementsCollection
             bookTitleTag = $$(byAttribute("data-testid", "art__title"));
 
-    @Step("Проверяем, что в результатах поиска есть книга {bookTitle}")
+    @Step("Проверить, что в результатах поиска есть книга {bookTitle}")
     public SearcResultPage checkSearchResultHavePopularBookByAuthor(String bookTitle) {
         bookTitleTag.shouldHave(itemWithText(bookTitle));
         return this;
     }
 
 
-    @Step("Проверяем, что в результате поимка ничего не найдено")
+    @Step("Проверить, что в результате поиска ничего не найдено")
     public SearcResultPage checkResultsIsEmpty() {
         searchTitleWrapper.shouldHave(text("ничего не найдено"));
         return this;
