@@ -35,7 +35,7 @@ public class BasketPage {
     }
 
 
-    @Step("Проверить, что в корзине есть книга {bookTitle}")
+    @Step("Проверить, что в корзине есть книга '{bookTitle}'")
     public BasketPage checkBasketContainsAddedBook(String bookTitle) {
         bookCardTitle.shouldHave(itemWithText(bookTitle));
         return this;

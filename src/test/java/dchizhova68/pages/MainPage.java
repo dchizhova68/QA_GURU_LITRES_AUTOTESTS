@@ -25,7 +25,7 @@ public class MainPage {
         return this;
     }
 
-    @Step("Ввести в поисковую строку {author} и нажать Enter")
+    @Step("Ввести в поисковую строку '{author}' и нажать 'Enter'")
     public MainPage setSearchValue(String author) {
         searchInput.setValue(author).pressEnter();
         return this;

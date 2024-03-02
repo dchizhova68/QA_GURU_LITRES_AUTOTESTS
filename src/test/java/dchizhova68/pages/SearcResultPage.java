@@ -18,7 +18,7 @@ public class SearcResultPage {
     private ElementsCollection
             bookTitleTag = $$(byAttribute("data-testid", "art__title"));
 
-    @Step("Проверить, что в результатах поиска есть книга {bookTitle}")
+    @Step("Проверить, что в результатах поиска есть книга '{bookTitle}'")
     public SearcResultPage checkSearchResultHavePopularBookByAuthor(String bookTitle) {
         bookTitleTag.shouldHave(itemWithText(bookTitle));
         return this;
