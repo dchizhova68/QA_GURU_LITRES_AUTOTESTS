@@ -21,7 +21,7 @@ public class NavigationTest extends TestBase {
     NavigationPage navigationPage = new NavigationPage();
 
 
-    @ParameterizedTest(name = "Навигационная цепочка в разделе {pageName} должна содержать пункт {navLastChildName}")
+    @ParameterizedTest(name = "Проверка навигационной цепочки в разделах")
     @Owner("Darya Chizhova")
     @Severity(SeverityLevel.MINOR)
     @CsvFileSource(resources = "/test_data/checkBreadcrumbsTest.csv")
