@@ -21,21 +21,21 @@ public class BasketPage {
     private ElementsCollection
             bookCardTitle = $$(byAttribute("data-testid", "cart__bookCardTitle--wrapper"));
 
-    @Step("Удаляем книгу из корзины")
+    @Step("Удалить книгу из корзины")
     public BasketPage deleteBook() {
         deleteButton.click();
         deleteModalButton.click();
         return this;
     }
 
-    @Step("Проверяем, что карзина пустая")
+    @Step("Проверить, что в корзине нет книг")
     public BasketPage checkCartEmptyState() {
         cartEmptyState.shouldBe(visible);
         return this;
     }
 
 
-    @Step("Проверяем, что в корзине есть книга{bookTitle}")
+    @Step("Проверить, что в корзине есть книга {bookTitle}")
     public BasketPage checkBasketContainsAddedBook(String bookTitle) {
         bookCardTitle.shouldHave(itemWithText(bookTitle));
         return this;

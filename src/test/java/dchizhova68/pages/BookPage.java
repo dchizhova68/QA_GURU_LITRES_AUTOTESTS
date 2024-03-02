@@ -13,19 +13,19 @@ public class BookPage {
             tabBasket = $(byAttribute("data-testid", "tab-basket")).$("a");
 
 
-    @Step("Закрываем модальное окно")
+    @Step("Закрыть модальное окно")
     public BookPage closeModalWindow() {
         closeModalButton.click();
         return this;
     }
 
-    @Step("Добавляем книгу в корзину")
+    @Step("Добавить книгу в корзину")
     public BookPage addBookToBasket() {
         addToCartButton.click();
         return this;
     }
 
-    @Step("Переходим в корзину")
+    @Step("Открыть корзину")
     public BookPage openBasket() {
         tabBasket.click();
         return this;

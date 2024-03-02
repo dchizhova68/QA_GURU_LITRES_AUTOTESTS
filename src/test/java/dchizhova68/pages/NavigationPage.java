@@ -12,13 +12,13 @@ public class NavigationPage {
 
             breadcrumbsSelector = $("#breadcrumbs li:last-child");
 
-    @Step("Открываем раздел {pageName}")
+    @Step("Открыть раздел {pageName}")
     public NavigationPage openPageByName(String pageName) {
         $(byTagAndText("a", pageName)).click();
         return this;
     }
 
-    @Step("Проверяем навигационную цепочку")
+    @Step("Проверить, что в навигационной цепочке присутствуют пункты {navLastChildName}")
     public NavigationPage checkBreadCrumbs(String navLastChildName) {
         breadcrumbsSelector.shouldHave(text(navLastChildName));
         return this;

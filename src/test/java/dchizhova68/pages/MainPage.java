@@ -19,19 +19,19 @@ public class MainPage {
             menuMoreButton = $(byAttribute("data-testid", "lowerMenu_moreButtonWrap")),
             menuMoreItems = $(byAttribute("data-testid", "lowerMenu_moreItems"));
 
-    @Step("Открываем главную страницу")
+    @Step("Открыть главную страницу")
     public MainPage openPage() {
         open("/");
         return this;
     }
 
-    @Step("Вводим в поисковую строку {author}")
+    @Step("Ввести в поисковую строку {author} и нажать Enter")
     public MainPage setSearchValue(String author) {
         searchInput.setValue(author).pressEnter();
         return this;
     }
 
-    @Step("Переходим в детальную форм просмотра первой книги из списка")
+    @Step("Открыть детальную форму просмотра первой книги из списка")
     public MainPage openDetailFormBook() {
         linkDetailFormBook.click();
         return this;
