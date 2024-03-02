@@ -1,6 +1,6 @@
 # Проект по автоматизации тестирования для сервиса электронных и аудиокниг [Литрес](https://www.litres.ru/)
 
-<img alt="litres" src="src/media/screenshots/mainPageLitres.JPG">
+<img alt="litres" src="src/media/screenshots/mainPageLitresUI.JPG">
 
 ## :scroll: Содержание:
 * <a href="#tools">Используемый стек</a>
@@ -73,7 +73,7 @@ gradle clean navigation_test -Denv=local - запуск тестов на нав
 - BASE_URL (адрес основной страницы тестируемого сайта)
   
 <p align="center">
-<img title="parametrs" src="src/media/screenshots/parametrs.JPG">
+<img title="parametrs" src="src/media/screenshots/parametrsUI.JPG">
 </p>
 
 
@@ -81,7 +81,7 @@ gradle clean navigation_test -Denv=local - запуск тестов на нав
 ## <img width="4%" style="vertical-align:middle" title="Allure Report" src="src/media/logo/Allure.svg"> </a> Пример  [Allure-отчета](https://jenkins.autotests.cloud/job/student-dchizhova68-qa_guru23_jenkins_litres_autotest/allure/#suites/41277a3158bf1a31c2a3a799da365f5e/5360cc7af9e7f66d/) </a>  
 Дождаться выполнения сборки. нажать на кнопку "Allure Report"
 
-![jenkins](src/media/screenshots/AllureReport1.png "Отчет")
+![jenkins](src/media/screenshots/AllureReportLinkUI.png "Отчет")
 
 Пример Allure Report: 
 ![jenkins](src/media/screenshots/AllureReport.JPG "Пример отчета")
@@ -92,7 +92,7 @@ gradle clean navigation_test -Denv=local - запуск тестов на нав
 Реализована интеграция с <code>Allure TestOps</code>. Есть возможность просмотре результата выполнения автотестов и создания ручных тестов. 
 
 <p align="center">
-<img title="Allure TestOps DashBoard" src="src/media/screenshots/AllureTestOps.JPG">
+<img title="Allure TestOps DashBoard" src="src/media/screenshots/AllureTestOpsUI.JPG">
 </p>
 
 
@@ -102,7 +102,7 @@ gradle clean navigation_test -Denv=local - запуск тестов на нав
 Реализована интеграция <code>Allure TestOps</code> с <code>Jira</code>, в задаче отображаются связные автотесты и результат их выполнения.
 
 <p align="center">
-<img title="Jira Task" src="src/media/screenshots/JiraTask.JPG">
+<img title="Jira Task" src="src/media/screenshots/JiraTaskUI.JPG">
 </p>
 
 
@@ -112,7 +112,7 @@ gradle clean navigation_test -Denv=local - запуск тестов на нав
 Результаты выполнения автотестов отправляются в Telegram.
 
 <p align="center">
-<img width="70%" title="Telegram Notifications" src="src/media/screenshots/TelegramBot.JPG">
+<img width="70%" title="Telegram Notifications" src="src/media/screenshots/TelegramBotUI.JPG">
 </p>
 
 
@@ -121,5 +121,5 @@ gradle clean navigation_test -Denv=local - запуск тестов на нав
 
 В отчетах Allure для каждого теста прикреплено видео прохождения теста 
 <p align="center">
-  <img title="Selenoid Video" src="src/media/screenshots/testVideo.gif">
+  <img title="Selenoid Video" src="src/media/screenshots/testVideoUI.gif">
 </p>
